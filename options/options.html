@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApplyAI Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">AI</span>
+        <span class="logo-text">ApplyAI</span>
+      </div>
+      <span class="subtitle">Settings</span>
+    </header>
+
+    <main>
+      <section id="section-api">
+        <div class="section-header">
+          <h2>AI Configuration</h2>
+          <p>Your API key is stored locally in your browser and never sent to our servers.</p>
+        </div>
+        <div class="field">
+          <label for="api-key">OpenAI API Key</label>
+          <div class="input-group">
+            <input type="password" id="api-key" placeholder="sk-..." autocomplete="off">
+            <button id="toggle-key-visibility" class="btn-icon" title="Toggle visibility">👁</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ai-model">AI Model</label>
+          <select id="ai-model">
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-4o-mini" selected>GPT-4o-mini</option>
+            <option value="gpt-4-turbo">GPT-4 Turbo</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button id="btn-save-api" class="btn btn-primary">Save</button>
+          <span id="save-api-feedback" class="feedback"></span>
+        </div>
+      </section>
+
+      <section id="section-resume">
+        <div class="section-header">
+          <h2>Resume</h2>
+          <p>Your resume helps the AI understand your background, skills, and experience.</p>
+        </div>
+        <div class="field">
+          <label for="resume-upload">Upload Resume (.txt or .pdf)</label>
+          <input type="file" id="resume-upload" accept=".txt,.pdf">
+        </div>
+        <div class="field">
+          <label for="resume-text">Or paste your resume text directly</label>
+          <textarea id="resume-text" placeholder="Paste your resume text here..." rows="8"></textarea>
+        </div>
+        <div id="resume-preview" class="preview" style="display:none;">
+          <div class="preview-header">
+            <span>Stored resume preview</span>
+            <button id="btn-clear-resume" class="btn btn-small btn-danger">Clear</button>
+          </div>
+          <div id="resume-preview-text" class="preview-text"></div>
+        </div>
+        <div class="actions">
+          <button id="btn-save-resume" class="btn btn-primary">Save Resume</button>
+          <span id="save-resume-feedback" class="feedback"></span>
+        </div>
+      </section>
+
+      <section id="section-writing">
+        <div class="section-header">
+          <h2>Writing Style Sample</h2>
+          <p>Paste a cover letter, email, or any writing you've done. This helps the AI match your tone and voice.</p>
+        </div>
+        <div class="field">
+          <textarea id="writing-sample" placeholder="Paste a sample of your writing here (optional)..." rows="6" maxlength="10000"></textarea>
+          <div class="char-counter"><span id="writing-chars">0</span>/10000</div>
+        </div>
+        <div class="actions">
+          <button id="btn-save-writing" class="btn btn-primary">Save</button>
+          <button id="btn-clear-writing" class="btn btn-secondary">Clear</button>
+          <span id="save-writing-feedback" class="feedback"></span>
+        </div>
+      </section>
+
+      <section id="section-behavior">
+        <div class="section-header">
+          <h2>Behavior Settings</h2>
+        </div>
+        <div class="toggle-row">
+          <div>
+            <div class="toggle-label">Auto-detect job pages</div>
+            <div class="toggle-desc">Automatically show a banner when a job application is detected</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="auto-detect" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <div>
+            <div class="toggle-label">Auto-fill fields</div>
+            <div class="toggle-desc">Fill fields automatically without a preview step</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="auto-fill">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <div>
+            <div class="toggle-label">Include cover letter generation</div>
+            <div class="toggle-desc">Generate cover letter and "why this company" content</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="include-cover-letter" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="btn-save-behavior" class="btn btn-primary">Save Settings</button>
+          <span id="save-behavior-feedback" class="feedback"></span>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../utils/storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

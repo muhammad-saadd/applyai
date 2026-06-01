@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApplyAI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">AI</span>
+        <span class="logo-text">ApplyAI</span>
+      </div>
+      <span id="status-badge" class="badge"></span>
+    </header>
+
+    <div id="page-info">
+      <div id="job-info">
+        <div id="job-title" class="job-title">No job page detected</div>
+        <div id="job-company" class="job-company"></div>
+      </div>
+    </div>
+
+    <div id="warnings"></div>
+
+    <div id="main-actions">
+      <button id="btn-fill" class="btn btn-primary" disabled>
+        Generate & Fill Application
+      </button>
+      <button id="btn-settings" class="btn btn-secondary">
+        Open Settings
+      </button>
+    </div>
+
+    <div id="quick-links">
+      <div class="quick-link" data-section="resume">
+        <span>📄</span> Paste Resume
+      </div>
+      <div class="quick-link" data-section="writing">
+        <span>✍️</span> Writing Sample
+      </div>
+    </div>
+
+    <div id="collapsible-sections">
+      <div id="section-resume" class="collapsible" style="display:none;">
+        <textarea id="quick-resume" placeholder="Paste your resume text here..." rows="4"></textarea>
+        <button id="btn-save-resume" class="btn btn-small btn-primary">Save</button>
+      </div>
+      <div id="section-writing" class="collapsible" style="display:none;">
+        <textarea id="quick-writing" placeholder="Paste a writing sample (optional)..." rows="3"></textarea>
+        <button id="btn-save-writing" class="btn btn-small btn-primary">Save</button>
+      </div>
+    </div>
+
+    <footer>
+      <span>Powered by ApplyAI</span>
+      <span id="version">v1.0.0</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

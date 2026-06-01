@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "ApplyAI",
+  "version": "1.0.0",
+  "description": "AI-powered job application filler and generator",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://*.ashbyhq.com/*",
+    "https://*.lever.co/*",
+    "https://*.greenhouse.io/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://*.smartrecruiters.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": { "48": "icons/icon48.png" }
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ashbyhq.com/*",
+        "https://*.lever.co/*",
+        "https://*.greenhouse.io/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.smartrecruiters.com/*"
+      ],
+      "js": [
+        "content_scripts/modal.js",
+        "content_scripts/ashby.js",
+        "content_scripts/lever.js",
+        "content_scripts/greenhouse.js",
+        "content_scripts/workday.js",
+        "content_scripts/generic.js",
+        "content_scripts/detector.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
