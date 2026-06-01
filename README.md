@@ -451,7 +451,7 @@ Released under the [MIT License](LICENSE). You are free to use, modify, and dist
 **Muhammad Saad**
 
 - GitHub: [@muhammad-saadd](https://github.com/muhammad-saadd)
-- LinkedIn: [muhammad-saadd](https://linkedin.com/in/muhammad-saadd)
+- LinkedIn: [muhammadsaad-pk](https://linkedin.com/in/muhammadsaad-pk)
 
 If ApplyAI saved you time, consider starring the repo — it helps others find it.
 
